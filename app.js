@@ -12,7 +12,7 @@ const main = async () => {
   do {
     //opt = await mostrarMenu();
     opt = await inquirerMenu();
-    console.log({ opt });
+    //console.log({ opt });
     //const tareas = new Tareas();
     //const tarea = new Tarea('Comprar comida');
     //console.log(tarea);
