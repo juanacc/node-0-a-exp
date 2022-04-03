@@ -62,7 +62,7 @@ class Tareas {
       if (completadas) {
         if (completadoEn) {
           const idx = `${index}`.green;
-          console.log(`${idx} ${desc} :: ${completadoEn}`);
+          console.log(`${idx} ${desc} :: ${completadoEn.green}`);
           index++;
         }
       } else {
@@ -71,6 +71,23 @@ class Tareas {
           console.log(`${idx} ${desc} :: ${estado}`);
           index++;
         }
+      }
+    });
+  }
+
+  toggleCompletadas(ids = []) {
+    ids.forEach(id => {
+      const tarea = this._listado[id];
+      if (!tarea.completadoEn) {
+        tarea.completadoEn = new Date().toISOString();
+      }
+    });
+
+    this.listadoArr.foreach(tarea => {
+      if (!ids.includes(tarea.id)) {
+        //const tarea = this._listado[tarea.id];
+        //tarea.completadoEn = null;
+        this._listado[tarea.id].completadoEn = null;
       }
     });
   }
